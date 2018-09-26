@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<script>
+            let rabbit = {};
+            rabbit.speak = function(line) {
+                console.log(`The ${this.type} rabbit say '${line}'`);
+            };
+
+            function speak(line) {
+                console.log(`The ${this.type} rabbit say '${line}'`);
+            }
+
+            let whiteRabbit = {type: "white", speak};
+            let hungryRabbit = {type: "hungry", speak};
+
+            whiteRabbit.speak("No OT!");
+            hungryRabbit.speak("F**k!");
+
+            // Pass this explicitly
+            speak.call(hungryRabbit, "Hungry as F**");
+
+            function normalize() {
+                console.log(this.coords.map(n => n / this.length));
+            }
+
+            function normalize2() {
+                console.log(this.coords.map(function(n) {
+                    console.log(this.length);
+                    return n / this.length;
+                }.bind(this)));
+            }
+
+            normalize2.call({coords: [0, 2, 3], length: 5});
+		</script>
+	</body>
+</html>

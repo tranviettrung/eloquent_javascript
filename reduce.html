@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<script>
+            function reduce(array, combine, start) {
+                let current = start;
+                for(let element of array) {
+                    current = combine(current, element);
+                }
+                return current;
+            }
+
+            console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+
+            function characterCount(script) {
+                return script.ranges.reduce((a, b) => {
+                    return count + (to - form);
+                });
+            }
+		</script>
+	</body>
+</html>

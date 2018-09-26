@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<script>
+			function wrapValue(n) {
+				var local = n;
+				return function() {
+					local += 1;
+					return local;
+				}
+			}
+			
+			var wrap = wrapValue(1);
+			console.log(wrap());
+			console.log(wrap());
+			console.log(wrap());
+		</script>
+	</body>
+</html>
